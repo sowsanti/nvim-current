@@ -18,7 +18,7 @@ vim.cmd([[
   augroup end
 ]])
 
-local packer_status, packer = pcall(require, "packer") 
+local packer_status, packer = pcall(require, "packer")
 if not packer_status then
   return
 end
@@ -26,10 +26,12 @@ end
 return packer.startup(function(use)
   use("wbthomason/packer.nvim")
   use("nvim-lua/plenary.nvim") -- provides lua functions that many other plugins use 
+  use("nvim-treesitter/nvim-treesitter")
 
   -- appearance
   use({"catppuccin/nvim", as = "catppuccin"}) -- colorsheme
   use("nvim-lualine/lualine.nvim") -- lualine
+  use("nvim-tree/nvim-web-devicons") -- icons
 
   -- which key
   use("folke/which-key.nvim")
@@ -46,6 +48,31 @@ return packer.startup(function(use)
   -- telescope, fuzzy finder
   use("nvim-telescope/telescope.nvim") -- telescope itself
   use({"nvim-telescope/telescope-fzf-native.nvim", run = "make"}) -- utility to make telescope faster
+
+  -- autocompletion
+  use("hrsh7th/nvim-cmp")
+  use("hrsh7th/cmp-buffer")
+  use("hrsh7th/cmp-path")
+  -- snippets
+  use("L3MON4D3/LuaSnip")
+  use("saadparwaiz1/cmp_luasnip")
+  use("rafamadriz/friendly-snippets")
+  -- lsp
+  use("williamboman/mason.nvim") -- lsp server manager
+  use("neovim/nvim-lspconfig") -- lsp configurator
+  use("williamboman/mason-lspconfig.nvim") -- blend between mason and nvim-lspconfig
+  -- lsp server configurations
+  use("hrsh7th/cmp-nvim-lsp") -- make the lsp appear in completion
+  use({
+    "glepnir/lspsaga.nvim",
+    branch = "main",
+    requires = {
+      { "nvim-tree/nvim-web-devicons" },
+      { "nvim-treesitter/nvim-treesitter" },
+    },
+  }) -- enhanced lsp uis
+  use("jose-elias-alvarez/typescript.nvim")
+  use("onsails/lspkind.nvim") -- add icons to lsp completion
 
   if packer_bootstrap then
     require("packer").sync()

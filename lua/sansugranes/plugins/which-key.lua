@@ -1,4 +1,3 @@
-local wk = require("which-key")
 local wk_status, wk = pcall(require, "which-key")
 if not wk_status then
   print("which-key not found")
@@ -13,10 +12,10 @@ wk.register({
       name = "+file/telescope",
       v = { "<cmd>Ex<cr>", "File explorer" },
       -- telescope
-      f = { "<cmd>Telescope find_files<cr>", "Find File" },
-      s = { "<cmd>Telescope live_grep<cr>", "Live grep" },
-      c = { "<cmd>Telescope grep_string<cr>", "Grep string" },
-      b = { "<cmd>Telescope buffers<cr>", "Find buffers" },
+      f = { "<cmd>Telescope find_files hidden=true<cr>", "Find File" },
+      s = { "<cmd>Telescope live_grep hidden=true<cr>", "Live grep" },
+      c = { "<cmd>Telescope grep_string hidden=true<cr>", "Grep string" },
+      b = { "<cmd>Telescope buffers hidden=true<cr>", "Find buffers" },
       h = { "<cmd>Telescope help_tags<cr>", "Help tags" },
       r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
     },

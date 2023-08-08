@@ -17,9 +17,11 @@ telescope.setup({
         ["<c-j"] = actions.move_selection_next,
         ["<c-k"] = actions.move_selection_previous,
         ["<c-q"] = actions.send_selected_to_qflist + actions.open_qflist,
-
       }
-    }
+    },
+    file_ignore_patterns = {
+      "node_modules", "build", "dist", "yarn.lock"
+    },
   }
 })
 

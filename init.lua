@@ -3,8 +3,12 @@ require("sansugranes.core.colorscheme")
 require("sansugranes.core.keymaps")
 require("sansugranes.core.options")
 
+require("sansugranes.plugins.cmp")
 require("sansugranes.plugins.comment")
 require("sansugranes.plugins.lualine")
 require("sansugranes.plugins.which-key")
+require("sansugranes.plugins.treesitter")
 require("sansugranes.plugins.telescope")
-
+require("sansugranes.plugins.lsp.lspsaga")
+require("sansugranes.plugins.lsp.lspconfig")
+require("sansugranes.plugins.lsp.mason")
