@@ -8,12 +8,6 @@ saga.setup({
   move_in_saga = {
     next = "<c-j>", prev = "<c-k>"
   },
-  finder_acrion_keys = {
-    open = "<cr>"
-  },
-  definition_action_keys = {
-    edit = "<cr>"
-  },
   symbol_in_winbar = {
     enable = false
   },
@@ -26,5 +20,15 @@ saga.setup({
   },
   code_action = {
     num_shortcut = false
+  },
+  definition = {
+    keys = {
+      edit = "<cr>"
+    }
+  },
+  finder = {
+    keys = {
+      edit = "<cr>"
+    }
   }
 })
